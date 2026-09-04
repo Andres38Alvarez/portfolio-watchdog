@@ -1,0 +1,41 @@
+name: Portfolio Watchdog
+
+on:
+  schedule:
+    # Every 30 minutes. GitHub silently ignores schedules more frequent
+    # than 5 minutes, and can delay runs by hours on quiet repos -- this
+    # is a health check, not a real-time monitor.
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {} # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write # to commit the updated data/state.json
+  issues: write # to open/close incident issues
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run health checks
+        run: npm run check
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit updated state
+        run: |
+          git config user.name "portfolio-watchdog-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/state.json
+          git diff --cached --quiet || git commit -m "chore: update watchdog state [skip ci]"
+          git push

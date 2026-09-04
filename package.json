@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-watchdog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Scheduled health check for my deployed portfolio projects, with AI-generated incident diagnosis, GitHub Issue tracking and ntfy.sh push alerts.",
+  "scripts": {
+    "check": "tsx scripts/check.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
