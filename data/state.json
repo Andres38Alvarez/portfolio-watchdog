@@ -1,13 +1,15 @@
 {
   "Cuban Art Across": {
-    "status": "up",
-    "lastChange": "2026-09-04T11:32:13.118Z",
-    "issueNumber": null
+    "status": "down",
+    "lastChange": "2026-10-20T22:52:09.252Z",
+    "issueNumber": 3,
+    "lastCause": "AI diagnosis unavailable (OpenRouter request failed or returned an unexpected shape)."
   },
   "Zettelkasten Explorer": {
-    "status": "up",
-    "lastChange": "2026-09-24T12:48:09.605Z",
-    "issueNumber": null
+    "status": "down",
+    "lastChange": "2026-10-20T22:52:09.252Z",
+    "issueNumber": 4,
+    "lastCause": "AI diagnosis unavailable (OpenRouter request failed or returned an unexpected shape)."
   },
   "Nexarte — Art Opportunities": {
     "status": "up",
