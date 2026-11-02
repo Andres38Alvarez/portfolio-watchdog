@@ -5,10 +5,9 @@
     "issueNumber": null
   },
   "Zettelkasten Explorer": {
-    "status": "down",
-    "lastChange": "2026-11-01T21:01:29.392Z",
-    "issueNumber": 5,
-    "lastCause": "AI diagnosis unavailable (OpenRouter request failed or returned an unexpected shape)."
+    "status": "up",
+    "lastChange": "2026-11-02T07:07:37.990Z",
+    "issueNumber": null
   },
   "Nexarte — Art Opportunities": {
     "status": "up",
